@@ -1,5 +1,6 @@
 package lexicon.se.service;
 
+import lexicon.se.data_access.StudentDao;
 import lexicon.se.model.Student;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ public class StudentManagementConsoleImpl implements StudentManagement {
 
     @Override
     public Student create() {
-        return null;
+        return new Student();
     }
 
     @Override
@@ -44,14 +45,13 @@ public class StudentManagementConsoleImpl implements StudentManagement {
 
     @Override
     public List<Student> findAll() {
-        return this.students;
+        return students.findAll();
+
     }
-
     @Override
-    public Student end(Student student) {
-
-
-
-        return null;
+    public Student edit(Student student) {
+        Student.delete(student.getId());
+        Student.save(student);
+        return student;
     }
 }

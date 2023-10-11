@@ -10,5 +10,5 @@ public interface StudentManagement {
      Student find(int id);
      Student remove(int id);
      List<Student> findAll();
-     Student end(Student student);
+     Student edit(Student student);
 }
