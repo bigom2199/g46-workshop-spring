@@ -12,7 +12,18 @@ public interface StudentDao {
       List<Student> findAll();
       void delete (int id);
 
+      // todo: define a method to find student by name
 
+
+           public Student find (String name){
+           for (Student student:Student){
+               if (Student.getName() == name){
+                   return student;
+               }
+           }
+
+
+ }
 
 
 }
